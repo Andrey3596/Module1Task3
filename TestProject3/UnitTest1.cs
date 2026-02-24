@@ -1,11 +1,12 @@
-﻿using NUnit.Framework;
-using task3;
+﻿using task3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+
 
 namespace TestProject3.Tests
 {
@@ -13,35 +14,31 @@ namespace TestProject3.Tests
     public class Tests
     {
         [TestMethod()]
-        public void Test()
+        public void EmptyLine()
         {
-            string s = "";
-            int count = Logic.СountIdenticalLetters(s);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0,count);
+            int count = Logic.СountIdenticalLetters("");
+            Assert.AreEqual(0,count);
         }
 
         [TestMethod()]
-        public void Test1()
+        public void SringSpaces()
         {
-            string s = "  ";
-            int count = Logic.СountIdenticalLetters(s);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, count);
+            int count = Logic.СountIdenticalLetters(" ");
+            Assert.AreEqual(0, count);
         }
 
         [TestMethod()]
-        public void Test2()
+        public void IdenticalCharactersSeparatedSpace()
         {
-            string s = "d d";
-            int count = Logic.СountIdenticalLetters(s);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, count);
+            int count = Logic.СountIdenticalLetters("d d");
+            Assert.AreEqual(0, count);
         }
 
         [TestMethod()]
-        public void Test3()
+        public void IdenticalSymbolsNear()
         {
-            string s = "dd d";
-            int count = Logic.СountIdenticalLetters(s);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(1, count);
+            int count = Logic.СountIdenticalLetters("dd");
+            Assert.AreEqual(1, count);
         }
     }
 }
