@@ -15,7 +15,27 @@ namespace TestProject3.Tests
         [TestMethod()]
         public void Test()
         {
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual();
+            string s = "";
+            int count = Logic.СountIdenticalLetters(s);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0,count);
+        }
+        public void Test1()
+        {
+            string s = "  ";
+            int count = Logic.СountIdenticalLetters(s);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, count);
+        }
+        public void Test2()
+        {
+            string s = "d d";
+            int count = Logic.СountIdenticalLetters(s);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, count);
+        }
+        public void Test3()
+        {
+            string s = "dd d";
+            int count = Logic.СountIdenticalLetters(s);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(1, count);
         }
     }
 }
